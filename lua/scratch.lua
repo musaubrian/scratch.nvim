@@ -3,12 +3,14 @@ local M = {}
 local enabled = false
 
 local function createScratch(bufName)
+    vim.cmd.set('splitbelow')
+    vim.cmd.set('splitright')
     vim.cmd.vsplit()
     vim.cmd('vertical resize 65')
     vim.cmd('noswapfile hide enew')
     vim.cmd('setlocal buftype=nofile')
     vim.cmd('setlocal bufhidden=hide')
-    vim.cmd('file' .. bufName)
+    vim.cmd.file(bufName)
 end
 
 M.enabled = function()
