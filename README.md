@@ -3,7 +3,7 @@
 Create temporary buffers.
 
 You can:
-- Create e new scratch buffer
+- Create a new scratch buffer
 - Destroy a scratch buffer when you're done
 
 ### Installlation
