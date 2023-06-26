@@ -12,6 +12,7 @@ M.enabled = function()
             vim.cmd("buffer" .. bufNum)
         else
             vim.cmd('vsplit _scratch')
+            vim.cmd('verticle resize 60')
             vim.cmd('noswapfile hide enew')
             vim.cmd('setlocal buftype=nofile')
             vim.cmd('setlocal bufhidden=hide')
@@ -21,9 +22,14 @@ M.enabled = function()
     end
 end
 
-M.disable = function()
+M.disabled = function()
     enabled = false
-    vim.cmd('bdelete _scratch')
+    local bufNum = vim.fn.bufnr("_scratch")
+    if vim.api.nvim_buf_is_valid(bufNum) then
+        vim.cmd('bdelete _scratch')
+    else
+        vim.notify("_scratch buffer doesn't exist", vim.log.levels.ERROR, {})
+    end
     vim.api.nvim_clear_autocmds { group = group }
 end
 
