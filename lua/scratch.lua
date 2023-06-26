@@ -5,7 +5,7 @@ local enabled = false
 
 M.enabled = function()
     enabled = true
-    vim.api.nvim_create_autocmd("scratch", {
+    vim.api.nvim_create_autocmd("BufEnter", "scratch", {
         group = group,
         callback = function()
             if enabled then

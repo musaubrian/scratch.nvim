@@ -1,4 +1,4 @@
-vim.api.nvim_create_user_command("Nscratch", function()
+vim.api.nvim_create_user_command("Scratch", function()
     require("scratch").toggle(true)
 end, {})
 
