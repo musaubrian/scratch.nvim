@@ -3,34 +3,32 @@ local M = {}
 local group = vim.api.nvim_create_augroup("scratch", {})
 local enabled = false
 
+local function createScratch(bufName)
+    vim.cmd.vsplit()
+    vim.cmd('vertical resize 60')
+    vim.cmd('noswapfile hide enew')
+    vim.cmd('setlocal buftype=nofile')
+    vim.cmd('setlocal bufhidden=hide')
+    vim.cmd('file' .. bufName)
+end
+
 M.enabled = function()
     enabled = true
     if enabled then
         local bufNum = vim.fn.bufnr("_scratch")
-
+        local bufName = '_scratch'
         if vim.api.nvim_buf_is_valid(bufNum) then
-            vim.cmd("buffer" .. bufNum)
+            vim.cmd('bdelete ' .. bufName)
+            createScratch(bufName)
         else
-            vim.cmd('vsplit _scratch')
-            vim.cmd('vertical resize 60')
-            vim.cmd('noswapfile hide enew')
-            vim.cmd('setlocal buftype=nofile')
-            vim.cmd('setlocal bufhidden=hide')
-            -- vim.cmd('setlocal nobuflisted')
-            vim.cmd('file _scratch')
+            createScratch(bufName)
         end
     end
 end
 
 M.disabled = function()
     enabled = false
-    local bufNum = vim.fn.bufnr("_scratch")
-    if vim.api.nvim_buf_is_valid(bufNum) then
-        vim.cmd('bdelete _scratch')
-    else
-        vim.notify("_scratch buffer doesn't exist", vim.log.levels.ERROR, {})
-    end
-    vim.api.nvim_clear_autocmds { group = group }
+    vim.cmd('bdelete _scratch')
 end
 
 

@@ -11,7 +11,7 @@ Use your favourite plugin manager
 
 ### Usage
 ```bash
-:Scratch - create a new scratch buffer or attach to an existing one
+:Scratch - create a new scratch buffer
 :CScratch - destroy an existing scratch buffer
 ```
 
