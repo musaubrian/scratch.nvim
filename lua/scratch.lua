@@ -12,7 +12,7 @@ M.enabled = function()
             vim.cmd("buffer" .. bufNum)
         else
             vim.cmd('vsplit _scratch')
-            vim.cmd('verticle resize 60')
+            vim.cmd('vertical resize 60')
             vim.cmd('noswapfile hide enew')
             vim.cmd('setlocal buftype=nofile')
             vim.cmd('setlocal bufhidden=hide')
