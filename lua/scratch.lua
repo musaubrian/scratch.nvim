@@ -13,13 +13,18 @@ end
 M.enabled = function()
     enabled = true
     if enabled then
-        switchToBufferIfExists("_scratch")
-        vim.cmd('vsplit splitright')
-        vim.cmd('noswapfile hide enew')
-        vim.cmd('setlocal buftype=nofile')
-        vim.cmd('setlocal bufhidden=hide')
-        -- vim.cmd('setlocal nobuflisted')
-        vim.cmd('file _scratch')
+        local bufNum = vim.fn.bufnr("_scratch")
+
+        if vim.api.nvim_buf_is_valid(bufNum) then
+            vim.cmd("buffer" .. bufNum)
+        else
+            vim.cmd('vsplit splitright')
+            vim.cmd('noswapfile hide enew')
+            vim.cmd('setlocal buftype=nofile')
+            vim.cmd('setlocal bufhidden=hide')
+            -- vim.cmd('setlocal nobuflisted')
+            vim.cmd('file _scratch')
+        end
     end
 end
 
