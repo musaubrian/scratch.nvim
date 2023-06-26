@@ -2,6 +2,10 @@
 
 Create temporary buffers.
 
+> **Warning**
+> 
+> It is by now means stable but its usable
+
 You can:
 - Create a new scratch buffer
 - Destroy a scratch buffer when you're done
