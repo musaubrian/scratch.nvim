@@ -4,7 +4,7 @@ local enabled = false
 
 local function createScratch(bufName)
     vim.cmd.vsplit()
-    vim.cmd('vertical resize 60')
+    vim.cmd('vertical resize 65')
     vim.cmd('noswapfile hide enew')
     vim.cmd('setlocal buftype=nofile')
     vim.cmd('setlocal bufhidden=hide')
