@@ -1,6 +1,5 @@
 local M = {}
 
-local group = vim.api.nvim_create_augroup("scratch", {})
 local enabled = false
 
 local function createScratch(bufName)
@@ -39,7 +38,7 @@ M.toggle = function(val)
     if val then
         M.enabled()
     else
-        M.disable()
+        M.disabled()
     end
 end
 
