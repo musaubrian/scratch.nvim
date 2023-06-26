@@ -5,20 +5,15 @@ local enabled = false
 
 M.enabled = function()
     enabled = true
-    vim.api.nvim_create_autocmd("BufEnter", "scratch", {
-        group = group,
-        callback = function()
-            if enabled then
-                vim.cmd.vsplit()
-                -- vim.cmd('split')
-                vim.cmd('noswapfile hide enew')
-                vim.cmd('setlocal buftype=nofile')
-                vim.cmd('setlocal bufhidden=hide')
-                -- vim.cmd('setlocal nobuflisted')
-                vim.cmd('file scratch')
-            end
-        end
-    })
+    if enabled then
+        vim.cmd.vsplit()
+        -- vim.cmd('split')
+        vim.cmd('noswapfile hide enew')
+        vim.cmd('setlocal buftype=nofile')
+        vim.cmd('setlocal bufhidden=hide')
+        -- vim.cmd('setlocal nobuflisted')
+        vim.cmd('file scratch')
+    end
 end
 
 M.disable = function()
