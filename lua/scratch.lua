@@ -11,7 +11,7 @@ M.enabled = function()
         if vim.api.nvim_buf_is_valid(bufNum) then
             vim.cmd("buffer" .. bufNum)
         else
-            vim.cmd('vsplit splitright')
+            vim.cmd('vsplit _scratch')
             vim.cmd('noswapfile hide enew')
             vim.cmd('setlocal buftype=nofile')
             vim.cmd('setlocal bufhidden=hide')
