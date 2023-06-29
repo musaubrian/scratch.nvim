@@ -13,14 +13,14 @@ You can:
 - Destroy a scratch buffer when you're done
 - Evaluate the contents of the scratch buffer
 
-<details>
-<Summary>Currently supports evalutation of:</Summary>
-
+Currently supports evalutation of:
   <details>
   <Summary>Python</Summary>
 
   ```bash
   :w !python
+  # or
+  :w !python3
   ```
   </details>
   <details>
@@ -38,7 +38,8 @@ You can:
   :w !npx ts-node
   ```
   </details>
-</details>
+
+<br/>
 
 > There could be more, but these are the ones I usually use
 

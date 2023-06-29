@@ -16,8 +16,8 @@ end
 M.enabled = function()
     enabled = true
     if enabled then
-        local bufNum = vim.fn.bufnr("_scratch")
         local bufName = '_scratch'
+        local bufNum = vim.fn.bufnr(bufName)
         if vim.api.nvim_buf_is_valid(bufNum) then
             vim.cmd.bdelete(bufName)
             createScratchBuff(bufName)
