@@ -6,7 +6,7 @@ Decided to try and build this from this [question](https://vi.stackexchange.com/
 
 > **Warning**
 > 
-> It is by now means stable but its usable
+> It is by no means stable but its usable
 
 You can:
 - Create a new scratch buffer
