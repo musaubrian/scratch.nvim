@@ -3,7 +3,6 @@ local M = {}
 local enabled = false
 
 local function createScratchBuff(bufName)
-    -- vim.cmd.set('splitbelow')
     vim.cmd.set('splitright')
     vim.cmd.vsplit()
     vim.cmd('vertical resize 65')
@@ -13,10 +12,11 @@ local function createScratchBuff(bufName)
     vim.cmd.file(bufName)
 end
 
+local bufName = '_scratch'
+
 M.enabled = function()
     enabled = true
     if enabled then
-        local bufName = '_scratch'
         local bufNum = vim.fn.bufnr(bufName)
         if vim.api.nvim_buf_is_valid(bufNum) then
             vim.cmd.bdelete(bufName)
@@ -29,7 +29,7 @@ end
 
 M.disabled = function()
     enabled = false
-    vim.cmd.bdelete('_scratch')
+    vim.cmd.bdelete(bufName)
 end
 
 

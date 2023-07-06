@@ -10,7 +10,7 @@ Decided to try and build this from this [question](https://vi.stackexchange.com/
 
 You can:
 - Create a new scratch buffer
-- Destroy a scratch buffer when you're done
+- Close the buffer
 - Evaluate the contents of the scratch buffer
 
 Currently supports evalutation of:
@@ -41,7 +41,10 @@ Currently supports evalutation of:
 
 <br/>
 
-> There could be more, but these are the ones I usually use
+  Most interprated languages can be run this way
+  ```bash
+  :w !interprator
+  ```
 
 ### Installation
 Use your favourite plugin manager
@@ -52,3 +55,6 @@ Use your favourite plugin manager
 
 :q to exit the scratch buffer
 ```
+
+
+For more information run: `:help scratch`
