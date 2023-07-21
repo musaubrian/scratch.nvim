@@ -1,8 +1,12 @@
 local M = {}
-
 local enabled = false
 
+---Creates a new vertical split with a scratch buffer
+---
+---@param bufName string
 local function createScratchBuff(bufName)
+    vim.cmd('syntax region ScratchText start="^" end="$"')
+    vim.cmd('highlight link ScratchText Normal')
     vim.cmd.set('splitright')
     vim.cmd.vsplit()
     vim.cmd('vertical resize 65')
