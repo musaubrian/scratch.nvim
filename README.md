@@ -4,10 +4,6 @@ Create temporary buffers.
 
 Decided to try and build this from this [question](https://vi.stackexchange.com/questions/11310/what-is-a-scratch-window)
 
-> **Warning**
-> 
-> It is by no means stable but its usable
-
 You can:
 - Create a new scratch buffer
 - Close the buffer
@@ -22,7 +18,7 @@ Currently supports evalutation of:
 > Most interprated languages can be run this way without saving the contents of the buffer
 >
 > ```bash
-> :w !interprator
+> :w !interpreter
 > ```
 
 ### Installation
@@ -31,7 +27,9 @@ Use your favourite plugin manager
 
 ### Usage
 
-> Enter the interprator when prompted.
+> Enter the interpreter when prompted.
+>
+>
 > If **TypeScript** input `ts`
 
 ```bash

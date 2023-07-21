@@ -3,10 +3,10 @@ vim.api.nvim_create_user_command("Scratch", function()
 end, {})
 
 vim.api.nvim_create_user_command("RScratch", function()
-    local interprator = vim.fn.input("Interprator> ")
-    if interprator == "ts" then
+    local interpreter = vim.fn.input("Interprator> ")
+    if interpreter == "ts" then
         vim.cmd("w !nxp ts-node")
     else
-        vim.cmd("w !" .. interprator)
+        vim.cmd("w !" .. interpreter)
     end
 end, {})
