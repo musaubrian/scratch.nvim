@@ -5,7 +5,7 @@ end, {})
 vim.api.nvim_create_user_command("RScratch", function()
     local interpreter = vim.fn.input("Interprator> ")
     if interpreter == "ts" then
-        vim.cmd("w !nxp ts-node")
+        vim.cmd("w !npx ts-node")
     else
         vim.cmd("w !" .. interpreter)
     end
