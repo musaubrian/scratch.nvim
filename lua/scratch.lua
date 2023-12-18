@@ -3,8 +3,9 @@ local enabled = false
 
 ---Creates a new vertical split with a scratch buffer
 ---
----@param bufName string
-local function createScratchBuff(bufName)
+---@param buf_name string
+---@param file_type string
+local function createScratchBuff(buf_name, file_type)
     vim.cmd('syntax region ScratchText start="^" end="$"')
     vim.cmd('highlight link ScratchText Normal')
     vim.cmd.set('splitright')
@@ -13,36 +14,43 @@ local function createScratchBuff(bufName)
     vim.cmd('noswapfile hide enew')
     vim.cmd('setlocal buftype=nofile')
     vim.cmd('setlocal bufhidden=hide')
-    vim.cmd.file(bufName)
+    vim.cmd('setlocal filetype=' .. file_type)
+    vim.cmd.syntax('enable')
+    vim.cmd.file(buf_name)
 end
 
-local bufName = '_scratch'
+local buf_name = '_scratch'
 
-M.enabled = function()
+
+M.enabled = function(file_type)
     enabled = true
     if enabled then
-        local bufNum = vim.fn.bufnr(bufName)
-        if vim.api.nvim_buf_is_valid(bufNum) then
-            vim.cmd.bdelete(bufName)
-            createScratchBuff(bufName)
+        local buf_num = vim.fn.bufnr(buf_name)
+        if buf_num then
+            if vim.api.nvim_buf_is_valid(buf_num) then
+                vim.cmd.bdelete(buf_name)
+                createScratchBuff(buf_name, file_type)
+            else
+                createScratchBuff(buf_name, file_type)
+            end
         else
-            createScratchBuff(bufName)
+            return
         end
     end
 end
 
 M.disabled = function()
     enabled = false
-    vim.cmd.bdelete(bufName)
+    vim.cmd.bdelete(buf_name)
 end
 
 
-M.toggle = function(val)
+M.toggle = function(val, dets)
     if val == nil then
-        return M.toggle(not enabled)
+        return M.toggle(not enabled, dets)
     end
     if val then
-        M.enabled()
+        M.enabled(dets)
     else
         M.disabled()
     end
