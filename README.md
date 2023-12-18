@@ -26,7 +26,7 @@ use {
     'musaubrian/scratch.nvim',
     requires = {
         'rcarriga/nvim-notify',
-        -- If you already use *nvim-notify* You can remove this
+        -- If you already use nvim-notify You can remove this
         config = function()
             require('notify').setup({
               --You can remove this if you wish to use default icons
@@ -54,7 +54,7 @@ use {
     dependencies = {
         {
             'rcarriga/nvim-notify',
-            -- If you already use *nvim-notify* You can remove this
+            -- If you already use nvim-notify You can remove this
             opts = {
                 --You can remove this if you wish to use default icons
               icons = {
