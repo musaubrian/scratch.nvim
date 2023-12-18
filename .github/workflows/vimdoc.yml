@@ -6,28 +6,15 @@ on:
       - main
 
 jobs:
-  genvimdoc:
-    runs-on: [ubuntu-latest]
-    name: generate vimdoc
-    permissions:
-      contents: write
+  docs:
+    runs-on: ubuntu-latest
+    name: gen vimdoc
     steps:
       - uses: actions/checkout@v2
-      - name: panvimdoc
-        uses: kdheepak/panvimdoc@main
+      - uses: kdheepak/panvimdoc@main
         with:
           vimdoc: scratch-nvim
-
-      - name: Check for modified files
-        id: git-check
-        run: echo "modified=$(if git diff-index --quiet HEAD --; then echo "false"; else echo "true"; fi)" >> $GITHUB_OUTPUT
-
-      - name: Push changes
-        if: steps.git-check.outputs.modified == 'true'
-        run: |
-          git config --global user.name 'Ernest'
-          git config --global user.email 'musaubrian@users.noreply.github.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git checkout main
-          git commit -am "ci(docs): update documentation"
-          git push
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "docs: update vimdoc"
+          branch: ${{ github.head_ref }}
