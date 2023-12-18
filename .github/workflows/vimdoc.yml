@@ -16,6 +16,8 @@ jobs:
         with:
           vimdoc: scratch-nvim
       - uses: stefanzweifel/git-auto-commit-action@v4
+        permissions:
+          contents: write
         with:
           commit_message: "docs: auto generate docs"
           branch: ${{ github.head_ref }}
