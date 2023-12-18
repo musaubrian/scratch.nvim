@@ -25,7 +25,7 @@ Since most interprated languages can be run using `:w !interpreter` without savi
 use {
     'musaubrian/scratch.nvim',
     requires = {
-        'rcarriga/nvim-notify'
+        'rcarriga/nvim-notify',
         -- If you already use *nvim-notify* You can remove this
         config = function()
             require('notify').setup({
@@ -53,7 +53,7 @@ use {
     'musaubrian/scratch.nvim',
     dependencies = {
         {
-            'rcarriga/nvim-notify'
+            'rcarriga/nvim-notify',
             -- If you already use *nvim-notify* You can remove this
             opts = {
                 --You can remove this if you wish to use default icons
