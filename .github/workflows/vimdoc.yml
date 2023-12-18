@@ -15,9 +15,13 @@ jobs:
         uses: kdheepak/panvimdoc@main
         with:
           vimdoc: scratch-nvim
+
+  updatedocs:
+    permissions:
+      contents: write
+    steps:
       - uses: stefanzweifel/git-auto-commit-action@v4
-        permissions:
-          contents: write
+      - name: update docs
         with:
           commit_message: "docs: auto generate docs"
           branch: ${{ github.head_ref }}
