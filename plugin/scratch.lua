@@ -3,16 +3,13 @@ local utils = require("utils")
 
 vim.api.nvim_create_user_command("Scratch", function(args)
     local ext = args.args
-    local msg = string.format("Filetype [ %s ] is not supported", ext)
+    local msg = string.format("Filetype [%s] is not supported", ext)
     if ext ~= nil then
         local res = utils.checkExtension(ext)
         if res ~= nil then
             require("scratch").toggle(true, res.filetype)
         else
-            utils.notify(
-                msg,
-                vim.log.levels.ERROR
-            )
+            vim.notify(msg, vim.log.levels.ERROR)
         end
     end
 end, {

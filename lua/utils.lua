@@ -1,6 +1,5 @@
 local file_stuff = require("file_types")
 local M = {}
-local notif = require("notify")
 
 ---check file extenstion and return everything related to that file
 ---@param extension string
@@ -20,15 +19,6 @@ function M.checkFileType(file_type)
             return v
         end
     end
-end
-
----@param msg string
----@param level integer
-function M.notify(msg, level)
-    notif(msg, level, {
-        title = "scratch.nvim",
-        timeout = 3500,
-    })
 end
 
 return M

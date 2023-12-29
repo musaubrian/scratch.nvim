@@ -7,7 +7,7 @@ M.dets = {
         extension = "js"
     },
     ts = {
-        interpreter = "npx ts-node",
+        interpreter = "npx ts-node -y",
         filetype = "typescript",
         extension = "ts"
     },
