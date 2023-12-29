@@ -13,7 +13,10 @@ jobs:
       - uses: actions/checkout@v2
       - uses: kdheepak/panvimdoc@main
         with:
-          vimdoc: scratch-nvim
+          vimdoc: scratch
+          pandoc: "./docs/scratch.md" # Input pandoc file
+          toc: true
+          treesitter: true # Use treesitter for highlighting codeblocks
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "docs: update vimdoc"
