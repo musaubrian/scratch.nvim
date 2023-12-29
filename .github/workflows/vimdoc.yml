@@ -14,7 +14,8 @@ jobs:
       - uses: kdheepak/panvimdoc@main
         with:
           vimdoc: scratch
-          pandoc: "./docs/scratch.md" # Input pandoc file
+          pandoc: "scratch.md" # Input pandoc file
+          version: "NVIM v0.9.0"
           toc: true
           treesitter: true # Use treesitter for highlighting codeblocks
       - uses: stefanzweifel/git-auto-commit-action@v4
