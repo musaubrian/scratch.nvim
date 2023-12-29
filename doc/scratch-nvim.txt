@@ -1,13 +1,6 @@
 *scratch-nvim.txt*        For NVIM v0.9.0        Last change: 2023 December 29
 
 ==============================================================================
-Table of Contents                             *scratch-nvim-table-of-contents*
-
-1. Scratch.nvim                                    |scratch-nvim-scratch.nvim|
-  - Commands                              |scratch-nvim-scratch.nvim-commands|
-  - Supported Filetypes        |scratch-nvim-scratch.nvim-supported-filetypes|
-
-==============================================================================
 1. Scratch.nvim                                    *scratch-nvim-scratch.nvim*
 
 Create temporary buffers and run the contents.
