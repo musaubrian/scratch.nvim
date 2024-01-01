@@ -36,7 +36,9 @@ use 'musaubrian/scratch.nvim',
 'musaubrian/scratch.nvim',
 ```
 
-> ![NOTE]
+
+
+> [!NOTE]
 > 
 > You need to have this interprators installed on your machine
 > 
