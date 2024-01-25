@@ -1,4 +1,4 @@
-*scratch-nvim.txt*         For NVIM v0.9.0        Last change: 2024 January 01
+*scratch-nvim.txt*         For NVIM v0.9.0        Last change: 2024 January 25
 
 ==============================================================================
 1. Scratch.nvim                                    *scratch-nvim-scratch.nvim*
