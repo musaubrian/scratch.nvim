@@ -35,7 +35,12 @@ M.dets = {
         interpreter = "bash",
         filetype = "bash",
         extension = "sh"
-    }
+    },
+    txt = {
+        interpreter = "",
+        filetype = "txt",
+        extension = "txt",
+    },
 }
 
 return M
