@@ -32,7 +32,6 @@ language   | interprator
 python     | python / python3
 lua        | lua
 javascript | node
-typescript | ts-node (uses `npx ts-node`)
 ruby       | ruby
 php        | php
 shell      | bash
