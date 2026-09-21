@@ -1,4 +1,5 @@
-*scratch-nvim.txt*         For NVIM v0.9.0        Last change: 2024 January 25
+*scratch-nvim.txt*
+                             For NVIM v0.9.0    Last change: 2026 September 21
 
 ==============================================================================
 1. Scratch.nvim                                    *scratch-nvim-scratch.nvim*
@@ -41,11 +42,10 @@ USAGE:
 SUPPORTED FILETYPES            *scratch-nvim-scratch.nvim-supported-filetypes*
 
   language     interprator
-  ------------ ----------------------------
+  ------------ ------------------
   python       python / python3
   lua          lua
   javascript   node
-  typescript   ts-node (uses npx ts-node)
   ruby         ruby
   php          php
   shell        bash
